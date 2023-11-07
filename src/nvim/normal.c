@@ -1290,6 +1290,72 @@ static void normal_check_cursor_moved(NormalState *s)
   }
 }
 
+static buf_T *last_visualchanged_buf;
+static int last_visualchanged_mode;
+
+/// Trigger VisualChanged if visual selection has changed
+static void normal_check_visual_changed(void)
+{
+  if (!finish_op && VIsual_active && has_event(EVENT_VISUALCHANGED)) {
+    pos_T start = VIsual;
+    pos_T end = curwin->w_cursor;
+    if (lt(end, start)) {  // swap
+      start = curwin->w_cursor;
+      end = VIsual;
+    }
+    // TODO
+    // pos.col = buf_byteidx_to_charidx(curbuf, pos.lnum, pos.col);
+
+    if (VIsual_mode == Ctrl_V) {
+      if (start.col > end.col) {
+        // swap needed because shift-o might change col
+        // even though selection remains the same
+        colnr_T t = start.col;
+        start.col = end.col;
+        end.col = t;
+      }
+    }
+    if (VIsual_mode == 'V') {
+      start.col = MINCOL;
+      end.col = MAXCOL;
+    }
+
+    // trigger if any of curbuf, mode or range has changed
+    if (curbuf != last_visualchanged_buf || VIsual_mode != last_visualchanged_mode
+        || !equalpos(start, curbuf->b_visual.vi_start) || !equalpos(end, curbuf->b_visual.vi_end)) {
+
+      // save positions, also updates '< '> registers
+      curbuf->b_visual.vi_mode = VIsual_mode;
+      curbuf->b_visual.vi_start = start;
+      curbuf->b_visual.vi_end = end;
+
+      save_v_event_T save_v_event;
+      dict_T *v_event = get_v_event(&save_v_event);
+
+      if (VIsual_mode != 'V') {
+        start.col += 1;
+        end.col += 1;
+      }
+
+      tv_dict_add_nr(v_event, S_LEN("start_line"), start.lnum);
+      tv_dict_add_nr(v_event, S_LEN("start_col"), start.col);
+      tv_dict_add_nr(v_event, S_LEN("end_line"), end.lnum);
+      tv_dict_add_nr(v_event, S_LEN("end_col"), end.col);
+      tv_dict_set_keys_readonly(v_event);
+
+      last_visualchanged_buf = curbuf;
+      last_visualchanged_mode = VIsual_mode;
+
+      apply_autocmds(EVENT_VISUALCHANGED, NULL, NULL, false, curbuf);
+
+      restore_v_event(v_event, &save_v_event);
+    }
+  } else {
+    // isn't visual mode; guarantee trigger next time
+    last_visualchanged_mode = -1;
+  }
+}
+
 static void normal_check_text_changed(NormalState *s)
 {
   // Trigger TextChanged if changedtick differs.
@@ -1428,6 +1494,7 @@ static int normal_check(VimState *state)
     normal_check_window_scrolled(s);
     normal_check_buffer_modified(s);
     normal_check_safe_state(s);
+    normal_check_visual_changed();
 
     // Updating diffs from changed() does not always work properly,
     // esp. updating folds.  Do an update just before redrawing if
