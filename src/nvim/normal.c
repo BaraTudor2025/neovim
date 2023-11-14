@@ -1290,8 +1290,9 @@ static void normal_check_cursor_moved(NormalState *s)
   }
 }
 
-static buf_T *last_visualchanged_buf;
 static int last_visualchanged_mode;
+static pos_T last_visualchanged_start;
+static pos_T last_visualchanged_end;
 
 /// Trigger VisualChanged if visual selection has changed
 static void normal_check_visual_changed(void)
@@ -1303,8 +1304,6 @@ static void normal_check_visual_changed(void)
       start = curwin->w_cursor;
       end = VIsual;
     }
-    // TODO
-    // pos.col = buf_byteidx_to_charidx(curbuf, pos.lnum, pos.col);
 
     if (VIsual_mode == Ctrl_V) {
       if (start.col > end.col) {
@@ -1316,25 +1315,30 @@ static void normal_check_visual_changed(void)
       }
     }
     if (VIsual_mode == 'V') {
-      start.col = MINCOL;
+      start.col = 0;
       end.col = MAXCOL;
     }
 
     // trigger if any of curbuf, mode or range has changed
-    if (curbuf != last_visualchanged_buf || VIsual_mode != last_visualchanged_mode
-        || !equalpos(start, curbuf->b_visual.vi_start) || !equalpos(end, curbuf->b_visual.vi_end)) {
+    if (VIsual_mode != last_visualchanged_mode
+        || !equalpos(start, last_visualchanged_start) || !equalpos(end, last_visualchanged_end)) {
 
-      // save positions, also updates '< '> registers
-      curbuf->b_visual.vi_mode = VIsual_mode;
-      curbuf->b_visual.vi_start = start;
-      curbuf->b_visual.vi_end = end;
+      // save byte positinos
+      last_visualchanged_start = start;
+      last_visualchanged_end = end;
+      last_visualchanged_mode = VIsual_mode;
 
       save_v_event_T save_v_event;
       dict_T *v_event = get_v_event(&save_v_event);
 
-      if (VIsual_mode != 'V') {
-        start.col += 1;
+      start.col = buf_byteidx_to_charidx(curbuf, start.lnum, start.col);
+      end.col = buf_byteidx_to_charidx(curbuf, end.lnum, end.col);
+
+      if (end.col != MAXCOL) {
         end.col += 1;
+      }
+      if (start.col != MAXCOL) {
+        start.col += 1;
       }
 
       tv_dict_add_nr(v_event, S_LEN("start_line"), start.lnum);
@@ -1342,9 +1346,6 @@ static void normal_check_visual_changed(void)
       tv_dict_add_nr(v_event, S_LEN("end_line"), end.lnum);
       tv_dict_add_nr(v_event, S_LEN("end_col"), end.col);
       tv_dict_set_keys_readonly(v_event);
-
-      last_visualchanged_buf = curbuf;
-      last_visualchanged_mode = VIsual_mode;
 
       apply_autocmds(EVENT_VISUALCHANGED, NULL, NULL, false, curbuf);
 

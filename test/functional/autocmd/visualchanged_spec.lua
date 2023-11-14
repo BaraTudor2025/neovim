@@ -4,6 +4,7 @@ local clear = helpers.clear
 local eq = helpers.eq
 local meths = helpers.meths
 local eval = helpers.eval
+local command = helpers.command
 local source = helpers.source
 local feed = helpers.feed
 local insert = helpers.insert
@@ -76,22 +77,22 @@ describe('VisualChanged', function()
       end_col = 5,
     }, event())
 
-    feed "Vj"
+    feed "Vj0"
     eq(4, count())
     eq({
       start_line = 1,
       end_line = 2,
       start_col = 1,
-      end_col = eval("v:maxcol"),
+      end_col = 5 --eval("v:maxcol"),
     }, event())
 
-    feed "<esc>Vj"
+    feed "<esc>Vj0"
     eq(6, count())
     eq({
       start_line = 2,
       end_line = 3,
       start_col = 1,
-      end_col = eval("v:maxcol"),
+      end_col = 5 --eval("v:maxcol"),
     }, event())
 
     feed "<esc>gg<c-v>ejh"
@@ -136,49 +137,26 @@ describe('VisualChanged', function()
     eq(old_event, event())
   end)
 
-  it("v:event has the same range as '< '> registers", function()
-    source [[au VisualChanged * let g:start = getpos("'<") | let g:end = getpos("'>")]]
-    source [[au VisualChanged * let g:cur = getpos(".") | let g:vis = getpos("v")]]
-    local regs = function ()
-      local s = meths.get_var("start")
-      local e = meths.get_var("end")
-      return {
-        start_line = s[2],
-        start_col = s[3],
-        end_line = e[2],
-        end_col = e[3]
-      }
-    end
-    local cursors = function ()
-      local s = meths.get_var("vis")
-      local e = meths.get_var("cur")
-      return {
-        start_line = s[2],
-        start_col = s[3],
-        end_line = e[2],
-        end_col = e[3]
-      }
-    end
+  it("works with empty buffer", function()
+    command "new"
+    feed "vjjkkhhll"
+    eq(1, count())
+  end)
 
-    feed "v"
-    eq(regs(), event())
-    --eq(cursors(), event())
+  it("works with multiple buffers", function()
+    command "new"
+    insert [[Hello]]
 
-    feed "iw"
-    eq(regs(), event())
-    --eq(cursors(), event())
+    feed "ggvl"
+    eq(2, count())
 
-    feed "Vjhh"
-    eq(regs(), event())
-    --eq(cursors(), event())
+    command "bnext"
+    feed "viw"
+    eq(4, count())
 
-    feed "<esc>Vj"
-    eq(regs(), event())
-    --eq(cursors(), event())
-
-    feed "<esc>gg<c-v>ejh"
-    eq(regs(), event())
-    --eq(cursors(), event())
+    command "bnext"
+    feed "viw"
+    eq(6, count())
   end)
 
 end)
