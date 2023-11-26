@@ -6797,6 +6797,17 @@ M.funcs = {
     params = { { 'expr', 'any' } },
     signature = 'max({expr})',
   },
+  dot_hist = {
+    desc = [=[
+      Return a Number which is the process ID of the Vim process.
+      This is a unique number, until Vim exits.
+    ]=],
+    fast = true,
+    name = 'dot_hist',
+    params = {},
+    returns = 'string',
+    signature = 'dot_hist()',
+  },
   menu_get = {
     args = { 1, 2 },
     desc = [=[

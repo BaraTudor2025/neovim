@@ -8,6 +8,7 @@
 
 typedef struct buffblock buffblock_T;
 typedef struct buffheader buffheader_T;
+typedef kvec_t(char*) DotHistory;
 
 /// structure used to store one block of the stuff/redo/recording buffers
 struct buffblock {

@@ -442,6 +442,33 @@ void beep_flush(void)
   }
 }
 
+static DotHistory g_dotHistory;
+
+DotHistory get_dotHistory(void) {
+   return g_dotHistory; 
+}
+
+void f_dot_hist(typval_T *argvars, typval_T *rettv, EvalFuncData fptr) {
+  rettv->v_type = VAR_STRING;
+  StringBuilder str = KV_INITIAL_VALUE;
+  for (size_t i=0; i<g_dotHistory.size; i++) {
+    size_t len = strlen(g_dotHistory.items[i]);
+    kv_concat_len(str, g_dotHistory.items[i], len);
+    kv_push(str, '\n');
+  }
+  char* buf = get_buffcont(&old_redobuff, true);
+  if (buf) {
+    kv_concat(str, buf);
+    kv_push(str, '\n');
+  }
+  buf = get_buffcont(&redobuff, true);
+  if (buf) {
+    kv_concat(str, buf);
+  }
+  kv_push(str, NUL);
+  rettv->vval.v_string = str.items;
+}
+
 /// The previous contents of the redo buffer is kept in old_redobuffer.
 /// This is used for the CTRL-O <.> command in insert mode.
 void ResetRedobuff(void)
@@ -449,7 +476,11 @@ void ResetRedobuff(void)
   if (block_redo) {
     return;
   }
-
+  
+  char* buf = get_buffcont(&old_redobuff, true);
+  if (buf){
+    kv_push(g_dotHistory, buf);
+  }
   free_buff(&old_redobuff);
   old_redobuff = redobuff;
   redobuff.bh_first.b_next = NULL;
