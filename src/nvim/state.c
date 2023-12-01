@@ -18,6 +18,7 @@
 #include "nvim/main.h"
 #include "nvim/memory.h"
 #include "nvim/option.h"
+#include "nvim/ops.h"
 #include "nvim/option_vars.h"
 #include "nvim/os/input.h"
 #include "nvim/state.h"
@@ -28,6 +29,8 @@
 #ifdef INCLUDE_GENERATED_DECLARATIONS
 # include "state.c.generated.h"
 #endif
+
+//static bool got_char = false;
 
 void state_enter(VimState *s)
   FUNC_ATTR_NONNULL_ALL
@@ -54,13 +57,22 @@ getkey:
     //   - There is an incomplete mapping.
     //   A blocking wait for a character should only be done in the third case, which is the only
     //   case of the three where typebuf.tb_len > 0 after vpeekc() returns NUL.
-    if (vpeekc() != NUL || typebuf.tb_len > 0) {
+    bool is_char_avail = vpeekc() != NUL || typebuf.tb_len > 0;
+    if (is_async_reg_executing() && !is_char_avail){
+      //replay_async(NULL);
+      multiqueue_put(main_loop.events, replay_async, NULL);
+    }
+    if (is_char_avail/*  && (got_char) */) {
       key = safe_vgetc();
+      //if (key != K_EVENT){
+        //got_char = true;
+      //}
     } else if (!multiqueue_empty(main_loop.events)) {
       // No input available and processing events may take time, flush now.
       ui_flush();
       // Event was made available after the last multiqueue_process_events call
       key = K_EVENT;
+      //got_char = false;
     } else {
       // Duplicate display updating logic in vgetorpeek()
       if (((State & MODE_INSERT) != 0 || p_lz) && (State & MODE_CMDLINE) == 0
@@ -77,6 +89,7 @@ getkey:
       // If an event was put into the queue, we send K_EVENT directly.
       if (!multiqueue_empty(main_loop.events)) {
         key = K_EVENT;
+        //got_char = false;
       } else {
         goto getkey;
       }

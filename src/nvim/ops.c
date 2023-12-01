@@ -92,6 +92,16 @@ struct block_def {
   colnr_T start_char_vcols;     // number of vcols of pre-block char
 };
 
+typedef struct {
+  char* buff;
+  size_t size;
+  size_t i;
+  int remap;
+  bool silent;
+  bool colon;
+  bool addcr;
+} replay_data_t;
+
 #ifdef INCLUDE_GENERATED_DECLARATIONS
 # include "ops.c.generated.h"
 #endif
@@ -1049,6 +1059,9 @@ static char *execreg_line_continuation(char **lines, size_t *idx)
   return str;
 }
 
+//static TimeWatcher macro_time_warcher;
+static replay_data_t replay_data;
+
 /// Execute a yank register: copy it into the stuff buffer
 ///
 /// @param colon   insert ':' before each line
@@ -1126,6 +1139,29 @@ int do_execreg(int regname, int colon, int addcr, int silent)
 
     // Insert lines into typeahead buffer, from last one to first one.
     put_reedit_in_typebuf(silent);
+
+    char *str = reg->y_array[0];
+    char *escaped = vim_strsave_escape_ks(str);
+    replay_data.buff = escaped;
+    replay_data.size = strlen(escaped);
+    replay_data.i = 0;
+    replay_data.remap = remap;
+    replay_data.silent = silent;
+    replay_data.colon = colon;
+    replay_data.addcr = addcr;
+    multiqueue_put(main_loop.events, replay_async, NULL);
+
+    //time_watcher_init(&main_loop, &macro_time_warcher, NULL);
+    // multiqueue_put(main_loop.events, replay_async, 
+    //   escaped, 
+    //   (void*)(uintptr_t)strlen(escaped),
+    //   (void*)(uintptr_t)0,
+    //   (void*)(intptr_t)remap,
+    //   (void*)(intptr_t)silent,
+    //   (void*)(intptr_t)colon,
+    //   (void*)(intptr_t)addcr);
+
+#if 0
     for (size_t i = reg->y_size; i-- > 0;) {  // from y_size - 1 to 0 included
       // insert NL between lines and after last line if type is kMTLineWise
       if (reg->y_type == kMTLineWise || i < reg->y_size - 1 || addcr) {
@@ -1158,9 +1194,70 @@ int do_execreg(int regname, int colon, int addcr, int silent)
         return FAIL;
       }
     }
+#endif
+
     reg_executing = regname == 0 ? '"' : regname;  // disable the 'q' command
   }
   return retval;
+}
+
+bool is_async_reg_executing(void){
+  return replay_data.size > 0;
+}
+
+void replay_async(void** argv) {
+  // char* buff = argv[0];
+  // size_t size = (uintptr_t)argv[1];
+  // size_t i = (uintptr_t)argv[2];
+  // int remap = (int)(intptr_t)argv[3];
+  // bool silent = argv[4];
+  // bool colon = argv[5];
+  // bool addcr = argv[6];
+
+  if (!is_async_reg_executing()){
+    return;
+  }
+  char* buff = replay_data.buff;
+  size_t i = replay_data.i;
+
+  char keys[4];
+
+  if (K_SPECIAL == (uint8_t)buff[i]) {
+    keys[0] = buff[i];
+    keys[1] = buff[i+1];
+    keys[2] = buff[i+2];
+    keys[3] = NUL;
+    replay_data.i += 3;
+  } else {
+    keys[0] = buff[i];
+    keys[1] = NUL;
+    replay_data.i += 1;
+  }
+  //uint8_t event[4] = {K_SPECIAL, KS_EXTRA, KE_EVENT, NUL};
+  //ins_typebuf(event, replay_data.remap, typebuf.tb_len, true, replay_data.silent);
+  ins_typebuf(keys, replay_data.remap, typebuf.tb_len, true, replay_data.silent);
+  //ins_typebuf(event, replay_data.remap, typebuf.tb_len, true, replay_data.silent);
+ 
+  // stop and free memory if we are at the end
+  if (replay_data.i >= replay_data.size){
+    xfree(replay_data.buff);
+    memset(&replay_data, 0, sizeof(replay_data_t));
+    replay_data.size = 0;
+  } else {
+    //multiqueue_put(main_loop.events, replay_async, NULL);
+    //loop_schedule_deferred(&main_loop, event_create(replay_async, NULL));
+  }
+  //if (i < size) {
+    // TODO(tudor) needs a timer with 0 ms to defer even further
+  //   loop_schedule_deferred(&main_loop, event_create(replay_async, 
+  //     buff,
+  //     (void*)(uintptr_t)size,
+  //     (void*)(uintptr_t)i,
+  //     (void*)(intptr_t)remap,
+  //     (void*)(intptr_t)silent,
+  //     (void*)(intptr_t)colon,
+  //     (void*)(intptr_t)addcr));
+  // }
 }
 
 /// If "restart_edit" is not zero, put it in the typeahead buffer, so that it's
