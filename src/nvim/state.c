@@ -19,6 +19,7 @@
 #include "nvim/main.h"
 #include "nvim/memory.h"
 #include "nvim/option.h"
+#include "nvim/ops.h"
 #include "nvim/option_vars.h"
 #include "nvim/os/input.h"
 #include "nvim/state.h"
@@ -29,6 +30,8 @@
 #ifdef INCLUDE_GENERATED_DECLARATIONS
 # include "state.c.generated.h"
 #endif
+
+//static bool got_char = false;
 
 void state_enter(VimState *s)
   FUNC_ATTR_NONNULL_ALL
@@ -62,6 +65,10 @@ getkey:
       ui_flush();
       // Event was made available after the last multiqueue_process_events call
       key = K_EVENT;
+    } 
+    else if (replay_buffer_has_char()){
+      key = replay_getc();
+      // TODO(tudor): maybe add <nop>/K_IGNORE so a redraw is forced?
     } else {
       // Duplicate display updating logic in vgetorpeek()
       if (((State & MODE_INSERT) != 0 || p_lz) && (State & MODE_CMDLINE) == 0
@@ -78,6 +85,7 @@ getkey:
       // If an event was put into the queue, we send K_EVENT directly.
       if (!multiqueue_empty(main_loop.events)) {
         key = K_EVENT;
+        //got_char = false;
       } else {
         goto getkey;
       }

@@ -1,0 +1,663 @@
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["Q"]]
+0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_no_longer_safe:319: SafeState reset: ins_typebuf()
+0 state_enter:102: input: <@>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: flush (+4 times...)
+0 UI: raw_line
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 61 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 54 bytes from msgpack Stream: 0x14c8db0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["j"]]
+0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_enter:102: input: <j>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line
+0 UI: flush
+0 UI: raw_line
+receive_msgpack:297: ch 3: parsing 48 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <i>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <j>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+20 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+0 state_enter:102: input: K_EVENT
+receive_msgpack:297: ch 3: parsing 488 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <i>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+0 UI: win_viewport
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 96 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <j>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+9 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 304 bytes from msgpack Stream: 0x14c8db0
+0 state_enter:102: input: K_EVENT
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+0 UI: win_viewport
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 96 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <A>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+9 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 298 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 53 bytes from msgpack Stream: 0x14c8db0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+0 state_enter:102: input: K_EVENT
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [false]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+
+
+
+
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [true]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["Q"]]
+0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_no_longer_safe:319: SafeState reset: ins_typebuf()
+0 state_enter:102: input: <@>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: flush (+3 times...)
+0 UI: raw_line
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 51 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <i>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 67 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <j>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+8 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+0 state_enter:102: input: K_EVENT
+receive_msgpack:297: ch 3: parsing 265 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <i>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line
+0 UI: win_viewport
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 78 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <j>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+8 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 265 bytes from msgpack Stream: 0x14c8db0
+0 state_enter:102: input: K_EVENT
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line
+0 UI: win_viewport
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 78 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <A>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+9 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+0 UI: raw_line
+receive_msgpack:297: ch 3: parsing 268 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: flush
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+receive_msgpack:297: ch 3: parsing 120 bytes from msgpack Stream: 0x14c8db0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [false]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+0 state_enter:102: input: K_EVENT
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+
+
+
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [true]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["Q"]]
+0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_no_longer_safe:319: SafeState reset: ins_typebuf()
+0 state_enter:102: input: <@>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: flush (+3 times...)
+0 UI: raw_line
+0 UI: flush
+0 UI: raw_line
+receive_msgpack:297: ch 3: parsing 51 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <i>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 67 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <j>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+8 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+0 state_enter:102: input: K_EVENT
+receive_msgpack:297: ch 3: parsing 265 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <i>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line
+0 UI: win_viewport
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 78 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <j>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <BS>
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+8 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+0 state_enter:102: input: K_EVENT
+receive_msgpack:297: ch 3: parsing 265 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line
+0 UI: win_viewport
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 78 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: flush
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <A>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <k>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <Esc>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <h>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+9 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 268 bytes from msgpack Stream: 0x14c8db0
+0 UI: raw_line
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+0 UI: win_viewport
+0 UI: grid_cursor_goto
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 120 bytes from msgpack Stream: 0x14c8db0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+0 state_enter:102: input: K_EVENT
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [false]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [true]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [false]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+
+
+
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [true]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+0 state_enter:102: input: K_EVENT
+0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", [":"]]
+0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <:>
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: flush (+5 times...)
+0 UI: raw_line
+0 UI: flush
+0 UI: raw_line
+receive_msgpack:297: ch 3: parsing 48 bytes from msgpack Stream: 0x14c8db0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: raw_line (+1 times...)
+0 UI: grid_cursor_goto
+0 UI: mode_change
+0 UI: mouse_off
+0 UI: flush
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+receive_msgpack:297: ch 3: parsing 131 bytes from msgpack Stream: 0x14c8db0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["q"]]
+0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <q>
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: grid_cursor_goto
+0 UI: flush
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+receive_msgpack:297: ch 3: parsing 71 bytes from msgpack Stream: 0x14c8db0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["!"]]
+0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <!>
+0 UI: raw_line
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 may_trigger_safestate:305: SafeState: Start triggering
+0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+0 UI: grid_cursor_goto
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 71 bytes from msgpack Stream: 0x14c8db0
+0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["<Enter>"]]
+0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x105dc10
+0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+0 state_no_longer_safe:319: SafeState reset: key typed
+0 state_enter:102: input: <CR>
+0 UI: grid_cursor_goto
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 46 bytes from msgpack Stream: 0x14c8db0
+0 UI: mode_change
+0 UI: mouse_on
+0 UI: flush
+receive_msgpack:297: ch 3: parsing 59 bytes from msgpack Stream: 0x14c8db0
+0 UI: stop
+0 stream_close:106: closing Stream: 0x105dc10
+0 stream_close:106: closing Stream: 0x105ddb0
+read_cb:116: closing Stream (0x14c8db0): EOF (end of file)
+stream_close:106: closing Stream: 0x14c8c10
+stream_close:106: closing Stream: 0x14c8db0
+chan_close_with_error:642: RPC: ch 3 was closed by the client
+0 os_exit:668: Nvim exit: 0
+on_process_exit:431: exited: pid=23543 status=0 stoptime=0
+stream_close:106: closing Stream: 0x1502b38
+os_exit:668: Nvim exit: 0

@@ -1230,6 +1230,59 @@ static bool can_get_old_char(void)
   return old_char != -1 && (old_KeyStuffed || stuff_empty());
 }
 
+static tasave_T replay_buf;
+static tasave_T orig_typebuf; // original typebuffer
+  
+void swap_buffers(tasave_T *save, tasave_T *new) {
+  // save
+  save->save_typebuf = typebuf;
+  save->typebuf_valid = true;
+  save->old_char = old_char;
+  save->old_mod_mask = old_mod_mask;
+  old_char = -1;
+
+  save->save_readbuf1 = readbuf1;
+  readbuf1.bh_first.b_next = NULL;
+  save->save_readbuf2 = readbuf2;
+  readbuf2.bh_first.b_next = NULL;
+
+  // swap
+  typebuf = new->save_typebuf;
+
+  old_char = new->old_char;
+  old_mod_mask = new->old_mod_mask;
+
+  readbuf1 = new->save_readbuf1;
+  readbuf2 = new->save_readbuf2;
+}
+
+bool replay_buffer_has_char(void) {
+  return replay_buf.save_typebuf.tb_maplen > 0;
+}
+
+int replay_getc(void) {
+  swap_typeadhead_to_replay();
+  int result;
+  if (vpeekc() != NUL || typebuf.tb_len > 0){
+    result = safe_vgetc();
+  } else {
+    result = NUL;
+  }
+  swap_replay_to_typeahead();
+  return result;
+}
+
+void swap_typeadhead_to_replay(void) {
+  swap_buffers(&orig_typebuf, &replay_buf);
+  if (typebuf.tb_buf == NULL){
+    alloc_typebuf();
+  }
+}
+
+void swap_replay_to_typeahead(void) {
+  swap_buffers(&replay_buf, &orig_typebuf);
+}
+
 /// Save all three kinds of typeahead, so that the user must type at a prompt.
 void save_typeahead(tasave_T *tp)
 {

@@ -1,0 +1,187 @@
+DBG 2024-01-04T23:34:28.188 ?.21925    log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_ui_set_focus", [true]]
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 receive_msgpack:297: ch 1: parsing 22 bytes from msgpack Stream: 0x258ec10
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 log_client_msg:98: RPC <-ch 1: [response] : nvim_ui_set_focus
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 handle_request:420: RPC: scheduled nvim_ui_set_focus
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 state_enter:101: input: K_EVENT
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 handle_nvim_ui_set_focus:5946: RPC: ch 1: invoke nvim_ui_set_focus
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:28.188 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+DBG 2024-01-04T23:34:29.104 ?.21925    log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["Q"]]
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x258ec10
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 state_no_longer_safe:318: SafeState reset: ins_typebuf()
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 state_enter:101: input: <@>
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 UI: flush (+7 times...)
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.104 ?.21925    receive_msgpack:297: ch 3: parsing 61 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.104 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.104 ?.21925    receive_msgpack:297: ch 3: parsing 54 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.666 ?.21925    log_server_msg:68: RPC ->ch 3: [notify]   [2, "nvim_input", ["Q"]]
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 receive_msgpack:297: ch 1: parsing 16 bytes from msgpack Stream: 0x258ec10
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 log_client_msg:98: RPC <-ch 1: [response] : nvim_input
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 handle_nvim_input:6559: RPC: ch 1: invoke nvim_input
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 state_enter:101: input: <Q>
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.666 ?.21925    receive_msgpack:297: ch 3: parsing 48 bytes from msgpack Stream: 0x2785db0
+INF 2024-01-04T23:34:29.666 nvim.21927.0 emsg_multiline:706: E354: Invalid register name: '^@'
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 state_enter:101: input: <i>
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 UI: raw_line (+2 times...)
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 UI: grid_cursor_goto
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.666 ?.21925    receive_msgpack:297: ch 3: parsing 194 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.666 nvim.21927.0 state_enter:101: input: <j>
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_enter:101: input: <k>
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_enter:101: input: <BS>
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_enter:101: input: <BS>
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_enter:101: input: <Esc>
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: raw_line (+20 times...)
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: win_viewport
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: grid_cursor_goto
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: mode_change
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.667 ?.21925    receive_msgpack:297: ch 3: parsing 487 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_enter:101: input: K_EVENT
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_enter:101: input: <i>
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: raw_line (+1 times...)
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: win_viewport
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.667 ?.21925    receive_msgpack:297: ch 3: parsing 96 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 state_enter:101: input: <j>
+DBG 2024-01-04T23:34:29.667 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_enter:101: input: <k>
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_enter:101: input: <BS>
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_enter:101: input: <BS>
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_enter:101: input: <Esc>
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: raw_line (+9 times...)
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: win_viewport
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: grid_cursor_goto
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: mode_change
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_enter:101: input: K_EVENT
+DBG 2024-01-04T23:34:29.668 ?.21925    receive_msgpack:297: ch 3: parsing 304 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_enter:101: input: <h>
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: raw_line (+1 times...)
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: win_viewport
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.668 ?.21925    receive_msgpack:297: ch 3: parsing 96 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 state_enter:101: input: <h>
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: raw_line (+1 times...)
+DBG 2024-01-04T23:34:29.668 ?.21925    receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.668 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_enter:101: input: <h>
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: raw_line (+1 times...)
+DBG 2024-01-04T23:34:29.669 ?.21925    receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_enter:101: input: <A>
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: raw_line (+1 times...)
+DBG 2024-01-04T23:34:29.669 ?.21925    receive_msgpack:297: ch 3: parsing 66 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_enter:101: input: <k>
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_enter:101: input: <Esc>
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_no_longer_safe:318: SafeState reset: key typed
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 state_enter:101: input: <h>
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: raw_line (+9 times...)
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: win_viewport
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: grid_cursor_goto
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: mode_change
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.669 ?.21925    receive_msgpack:297: ch 3: parsing 298 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: raw_line
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 UI: flush
+DBG 2024-01-04T23:34:29.669 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+DBG 2024-01-04T23:34:29.669 ?.21925    receive_msgpack:297: ch 3: parsing 53 bytes from msgpack Stream: 0x2785db0
+DBG 2024-01-04T23:34:30.668 nvim.21927.0 state_enter:101: input: K_EVENT
+DBG 2024-01-04T23:34:30.668 nvim.21927.0 may_trigger_safestate:304: SafeState: Start triggering
+DBG 2024-01-04T23:34:30.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:30.668 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
+DBG 2024-01-04T23:34:33.673 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:33.682 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=0 events_pending=0
+DBG 2024-01-04T23:34:33.682 nvim.21927.0 inbuf_poll:462: blocking... events_enabled=1 events_pending=0
